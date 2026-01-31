@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Appuntamenti - BOVE s.n.c.</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "card-dark": "#1c242d", 
+              "card-light": "#ffffff",
+              "secondary-text": "#9dabb9",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", // slightly rounded as per request
+              "lg": "0.75rem", 
+              "xl": "1rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b4754;
+            border-radius: 4px;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden min-h-screen pb-24">
+<!-- Header Section -->
+<header class="flex p-4 @container sticky top-0 z-10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex w-full items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary" data-alt="Portrait of technician Marco wearing a work uniform" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqr-wUU-ILrFc78m03ZR9dqanSefMdfmHHA1lksh6NWkEsWVHB9Gkt3giJsSk630OHiY-COrg-xIL0V4Am__h18PfmxmLmamRnHeNSkR-wYkVX99WoAVGMZNW7ZEux-f_8EBxaYjXwPFF41qGigrGhb3V4RGncqINAwAaBWV9qjldRulHj_mwveH0KIbhPICHLj8AoMsANC1EkazSmUdx92cM778rKwbx5NXqbebLYZ8SiEXFsp2U4CXDM7fLHkrXkXvhn8qrnH7c");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Buongiorno, Marco</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">bolt</span>
+<p class="text-secondary-text text-xs font-bold uppercase tracking-wider">BOVE s.n.c.</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-secondary-text text-sm font-medium leading-normal text-right">Mercoledì</p>
+<p class="text-[#111418] dark:text-white text-sm font-bold leading-normal">24 Ottobre</p>
+</div>
+</div>
+</header>
+<!-- Daily Progress -->
+<section class="flex flex-col gap-3 px-4 pt-4">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal">Progresso Giornaliero</p>
+<p class="text-secondary-text text-sm font-normal leading-normal">1/3 Completati</p>
+</div>
+<div class="rounded-full bg-gray-300 dark:bg-[#3b4754] h-2 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 33%;"></div>
+</div>
+</section>
+<!-- Hero: Next Appointment -->
+<section class="mt-6">
+<div class="flex items-center gap-2 px-4 pb-3">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<h1 class="text-[#111418] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] uppercase">Prossimo Appuntamento</h1>
+</div>
+<div class="px-4">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white dark:bg-card-dark overflow-hidden border border-gray-100 dark:border-gray-800">
+<!-- Map / Location Image -->
+<div class="w-full bg-center bg-no-repeat h-40 bg-cover relative" data-alt="Map view showing the location of the restaurant in Turin" data-location="Torino" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwmGHBp_muHttK_zZJqg6KHny74-qy7tYwP9zLE52wBW8E6fOowH-n5MF9hdjCmMq90ESTnKAWNK3MTMQn-t4UcHNpPF0Bo_TQq4-lt_kdbZsYPEohIM4sHBiNwneS284ANQWrAlgyA12PpnbNlED3FbrQWT7Xo5kKjhJ-fRMTTYjJTwWFP3CVTnzfIolFg10Xqz2kCVr6MaEdi6QPG8-T8yRkkV9lfFK90pXMarIfFhyHKwtYgm6lZmD0BA5vNnV-AKJxpbwp0y0");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1 text-white">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-sm font-medium">Via Roma 45, Torino</span>
+</div>
+</div>
+<div class="flex w-full flex-col gap-4 p-5">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#111418] dark:text-white text-xl font-bold leading-tight mb-1">Ristorante Da Luigi</p>
+<p class="text-primary text-sm font-bold uppercase tracking-wide">Manutenzione Allarme</p>
+</div>
+<div class="bg-primary/10 px-3 py-1 rounded text-primary font-bold text-sm">
+                            10:30
+                        </div>
+</div>
+<div class="flex gap-2 text-secondary-text text-sm items-center">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>10:30 - 11:30 (1h)</span>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-2">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-11 px-4 bg-primary hover:bg-blue-600 active:bg-blue-700 transition-colors text-white text-sm font-bold gap-2">
+<span class="material-symbols-outlined text-lg">call</span>
+<span>Chiama</span>
+</button>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-11 px-4 bg-[#283039] dark:bg-[#283039] hover:bg-gray-600 text-white text-sm font-bold gap-2 border border-gray-600">
+<span class="material-symbols-outlined text-lg">navigation</span>
+<span>Naviga</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Agenda / List -->
+<section class="mt-8 px-4">
+<h2 class="text-[#111418] dark:text-white text-[18px] font-bold leading-tight tracking-[-0.015em] mb-4">Programma di Oggi</h2>
+<div class="flex flex-col gap-4">
+<!-- List Item 1 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-lg bg-white dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex gap-4 w-full">
+<!-- Status/Time Column -->
+<div class="flex flex-col items-center justify-center min-w-[3rem] border-r border-gray-200 dark:border-gray-700 pr-4">
+<span class="text-secondary-text text-xs font-medium">Inizio</span>
+<span class="text-[#111418] dark:text-white font-bold text-lg">13:00</span>
+</div>
+<!-- Details Column -->
+<div class="flex flex-col flex-1 justify-center gap-1">
+<h3 class="text-[#111418] dark:text-white text-base font-bold truncate">Rossi S.p.A.</h3>
+<p class="text-secondary-text text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+                            Installazione Videosorveglianza
+                        </p>
+</div>
+<!-- Action Icon (Chevron) -->
+<div class="flex items-center justify-center pl-2">
+<div class="h-8 w-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-text text-lg">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-lg bg-white dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex gap-4 w-full">
+<!-- Status/Time Column -->
+<div class="flex flex-col items-center justify-center min-w-[3rem] border-r border-gray-200 dark:border-gray-700 pr-4">
+<span class="text-secondary-text text-xs font-medium">Inizio</span>
+<span class="text-[#111418] dark:text-white font-bold text-lg">15:30</span>
+</div>
+<!-- Details Column -->
+<div class="flex flex-col flex-1 justify-center gap-1">
+<h3 class="text-[#111418] dark:text-white text-base font-bold truncate">Condominio Verdi</h3>
+<p class="text-secondary-text text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">electric_bolt</span>
+                            Controllo Quadro Elettrico
+                        </p>
+</div>
+<!-- Action Icon (Chevron) -->
+<div class="flex items-center justify-center pl-2">
+<div class="h-8 w-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-text text-lg">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Completed/Past Item (Visual distinction) -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-lg bg-gray-50 dark:bg-card-dark/50 p-4 border border-transparent">
+<div class="flex gap-4 w-full opacity-60">
+<div class="flex flex-col items-center justify-center min-w-[3rem] border-r border-gray-200 dark:border-gray-700 pr-4">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+</div>
+<div class="flex flex-col flex-1 justify-center gap-1">
+<h3 class="text-[#111418] dark:text-white text-base font-bold truncate line-through decoration-gray-500">Bar Centrale</h3>
+<p class="text-secondary-text text-sm">Riparazione Illuminazione</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#151d26] border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-primary">
+<span class="material-symbols-outlined text-2xl fill-1">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-secondary-text hover:text-[#111418] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+<span class="text-[10px] font-medium">Calendario</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-secondary-text hover:text-[#111418] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">groups</span>
+<span class="text-[10px] font-medium">Clienti</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-secondary-text hover:text-[#111418] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium">Impostazioni</span>
+</button>
+</div>
+</nav>
+<!-- Spacer for bottom nav -->
+<div class="h-20"></div>
+</body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login BOVE s.n.c.</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1c242e", // Slightly lighter for inputs/cards
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Main Container - optimized for mobile width -->
+<div class="w-full max-w-[480px] flex flex-col gap-6">
+<!-- Logo Section -->
+<div class="flex flex-col items-center justify-center pt-8 pb-4">
+<div class="w-48 h-auto aspect-[3/1] flex items-center justify-center mb-6">
+<!-- Using img tag for logo to preserve aspect ratio properly -->
+<img alt="BOVE s.n.c. Company Logo" class="w-full h-full object-contain drop-shadow-lg" data-alt="BOVE s.n.c. Company Logo with blue text" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWePsp5Qu7_EDvu81Rsl21ypj8wl59VxbQIAKimWzcSKo1Tkgya9Y6Wl8XnGPJnYpLeSPY8TLVB2b7LN0sDqPYjD8UQFNS7IMg3lAk0C_KyEbZfBjbik897f39BI-OOg0osDTg8aVVA4S2y2tjQPLHx6E_TkMlEJUqVdiiBiplm8qkxHRSkaW4IEJhfoKNuQXoQl8wUZptEZqX0okcBB_CryNWrAr7vkOvL72krgi2mwoidLGcTOhVJkdC_33JIRxG2C4GuRr4pOM"/>
+</div>
+<h1 class="text-3xl font-bold tracking-tight text-center dark:text-white text-[#111418]">
+                Gestionale Appuntamenti
+            </h1>
+<p class="text-base font-normal text-center text-[#637588] dark:text-[#9dabb9] mt-2">
+                Accedi per gestire i tuoi interventi
+            </p>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-4">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-base font-medium dark:text-white text-[#111418]" for="email">
+                    Email
+                </label>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-[#dce0e5] dark:border-[#3b4754] bg-white dark:bg-surface-dark text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 focus:border-primary h-14 placeholder:text-[#637588] dark:placeholder:text-[#9dabb9] px-4 text-base font-normal leading-normal transition-colors" id="email" placeholder="nome@bove.it" type="email" value=""/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-base font-medium dark:text-white text-[#111418]" for="password">
+                    Password
+                </label>
+<div class="relative flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg border border-[#dce0e5] dark:border-[#3b4754] bg-white dark:bg-surface-dark text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 focus:border-primary h-14 placeholder:text-[#637588] dark:placeholder:text-[#9dabb9] px-4 border-r-0 text-base font-normal leading-normal transition-colors" id="password" placeholder="Inserisci la tua password" type="password" value=""/>
+<button class="flex items-center justify-center px-4 rounded-r-lg border border-l-0 border-[#dce0e5] dark:border-[#3b4754] bg-white dark:bg-surface-dark text-[#637588] dark:text-[#9dabb9] hover:text-primary dark:hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end pt-1">
+<a class="text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="#">
+                        Password dimenticata?
+                    </a>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-2">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal tracking-[0.015em] transition-all shadow-lg shadow-primary/20">
+<span>Accedi</span>
+</button>
+</div>
+<!-- Footer / Version -->
+<div class="flex flex-col items-center justify-center gap-4 mt-8">
+<p class="text-xs font-medium text-[#637588] dark:text-[#637588]">
+                BOVE s.n.c. v1.0.2
+            </p>
+</div>
+</div>
+<!-- Background decoration for visual flair -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px]"></div>
+</div>
+</body></html>

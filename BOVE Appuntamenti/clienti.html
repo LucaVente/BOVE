@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestione Clienti - BOVE s.n.c.</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1C2630", // Slightly lighter for cards
+                        "secondary-text": "#9dabb9",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                font-size: 24px;
+            }
+            .material-symbols-outlined.filled {
+                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .no-scrollbar {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex flex-col h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="flex-none px-4 pt-6 pb-2 bg-background-light dark:bg-background-dark z-10">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Clienti</h1>
+<p class="text-sm text-secondary-text">Gestione anagrafica BOVE s.n.c.</p>
+</div>
+<button class="group flex items-center justify-center w-10 h-10 rounded-full bg-primary hover:bg-blue-600 active:scale-95 transition-all shadow-lg shadow-blue-900/20">
+<span class="material-symbols-outlined text-white">add</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-secondary-text">search</span>
+</div>
+<input class="block w-full p-3 pl-10 text-sm rounded-xl border-none bg-white dark:bg-surface-dark text-slate-900 dark:text-white placeholder-secondary-text focus:ring-2 focus:ring-primary shadow-sm" placeholder="Cerca cliente o indirizzo..." type="text"/>
+</div>
+</header>
+<!-- Client List (Scrollable Area) -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-4 pb-24 pt-2 space-y-3">
+<!-- Section Header -->
+<div class="flex items-center justify-between py-2">
+<h3 class="text-xs font-bold uppercase tracking-wider text-secondary-text">Elenco Recente</h3>
+<button class="text-xs font-medium text-primary hover:text-blue-400">Filtri</button>
+</div>
+<!-- Client Card 1 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Portrait of a professional man in a suit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIO7KQeDGiOfuvQQCJTnxuYDEn2gr553IW-yvr9Av8m_S8_M3SgJSw5G0erWZko_BCbFQMOT05PsqrRFGn9E2XAP3QZpkbREBaxICf14SypqrRBMU1E4GwVjQZCp7F8taqPNYG51qnUX-6XMDZ-ovL31esFemrnOhvTBJKU4fEnwKkwP-3Mn3G2pC6kr1vuayrmAzoNspT6mwd-3A4e7hcbmZ3hD5gfVnp15G_FD6_69Bvd7mPlDvLi6rCrqCYDr85KWL9v_pP3X4');"></div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-surface-dark rounded-full"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Rossi Mario</h3>
+<div class="flex items-center gap-1 text-secondary-text">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm truncate">Via Roma 10, Milano</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-2 shrink-0 self-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client Card 2 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-primary font-bold text-lg border border-slate-200 dark:border-slate-600">
+                                BE
+                            </div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Bianchi Elettronica S.r.l.</h3>
+<div class="flex items-center gap-1 text-secondary-text">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm truncate">Corso Italia 45, Monza</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-2 shrink-0 self-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client Card 3 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Portrait of a smiling professional woman wearing glasses" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWAw-v6FCRjU_rIrGODnjLxo_a1-32_sKkO-1_fPDHD19Q04eVHXK7YBoq2Iwl25fAYuhKoxcTjvaOApR-u3-A10Cg6h3ZxPZIo6wk7l_uaMvC9NlO67Zbq6NpOKDt5O-wn_rvmT1DegZKT5ME6hcbagGPI1VBXGch4hAQtOWDsXICuwQLHSmRD6RAoyEDfzebZ9wTqgrZp6a9lj02VnMxeiRXYG1gIvWjBA_2UOvY_cRvyWsvGW_HJMArnsF4LimwvERYX2Lim4Q');"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Verdi Giulia</h3>
+<div class="flex items-center gap-1 text-secondary-text">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm truncate">Piazza Duomo 1, Milano</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-2 shrink-0 self-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client Card 4 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Portrait of a serious man with a beard in office attire" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnfp659Cun3vxdYMqv9m8Pe6gVD7nKUD9aAHdZDIlYe59d0YIS-vX07vR0OxrxvALiFB9YMsj-JnZkynCF9QIo1mVM3Yw9STrnx45-cCXdryF9JNDSJoQdlRV6aj1wkA-LtX3WvDey-XfNh9PRZmIUlxKxNs-YFde8hQnn7GBRVcXH45IhqYdlsQvQMZ-NscW8CrG5lUZQFqxsic3kx8_xQWnrwsTVh6TDE1Vzk7b9MNNqucuN7iJA2JhpuGWReyDeBBrYw3spHvI');"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Ricci Luigi</h3>
+<div class="flex items-center gap-1 text-secondary-text">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm truncate">Via Garibaldi 88, Torino</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-2 shrink-0 self-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client Card 5 -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3 flex-1 min-w-0">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-secondary-text border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined">domain</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Sicurezza Pro S.r.l.</h3>
+<div class="flex items-center gap-1 text-secondary-text">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm truncate">Via Dante 12, Como</p>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex gap-2 shrink-0 self-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="flex-none bg-white dark:bg-[#151e28] border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-6">
+<ul class="flex justify-between items-center">
+<li>
+<a class="flex flex-col items-center gap-1 text-secondary-text hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+<span class="text-[10px] font-medium">Appuntamenti</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl filled">groups</span>
+<span class="text-[10px] font-medium">Clienti</span>
+</a>
+</li>
+<li>
+<a class="flex flex-col items-center gap-1 text-secondary-text hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-medium">Impostazioni</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</body></html>

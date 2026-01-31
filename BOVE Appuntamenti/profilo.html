@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profilo e Impostazioni - BOVE s.n.c.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1c242d", // Slightly lighter for cards
+                        "surface-highlight": "#283039", // For icon backgrounds
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        
+        /* iOS Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #137fec;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #137fec;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-x-hidden antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-800">
+<button class="text-[#111418] dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-gray-200 dark:active:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+                Profilo
+            </h2>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 flex flex-col gap-6 px-4 py-6">
+<!-- Profile Header Card -->
+<div class="flex flex-col items-center bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-24 border-4 border-background-light dark:border-[#283039]" data-alt="Portrait of a professional technician in work uniform" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMy6Loh4pIIF_4VMWzQJylL6Rct1dcx6uYV4TXWEL-jD-lvuXdgfrfI_RCoYpp2_O7f0zGXV23464HcS5gRtnqv13bQ7uoxlFb6koVQaCha59qBlsJ3cJ8PsFPrbbt9UjTHUhPNaq8STZD7ab86_antBeapU6Pjl20ZPliR_xs1HOhjqmV3WAARd6kpOPwPUJlN4PHJHI1OWrQW1DdQsdbfT-0eLX8NglB1RbWnGW5UcZYB-uKo0Ev6Ungz_R4wATJUIsrmslJZKw");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-1.5 border-[3px] border-white dark:border-surface-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-1">
+<p class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight text-center">Mario Rossi</p>
+<p class="text-[#637588] dark:text-[#9dabb9] text-sm font-medium leading-normal text-center">Tecnico Installatore • ID: #8824</p>
+</div>
+</div>
+<!-- Settings Group 1: Preferenze -->
+<div class="flex flex-col gap-2">
+<h3 class="text-[#637588] dark:text-[#9dabb9] text-xs font-bold uppercase tracking-wider px-2">Preferenze</h3>
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Theme Toggle -->
+<div class="flex items-center gap-4 p-4 justify-between border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-blue-50 dark:bg-surface-highlight shrink-0 size-9">
+<span class="material-symbols-outlined">dark_mode</span>
+</div>
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal flex-1 truncate">Tema Scuro</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[30px] w-[50px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-[#3d4855] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[26px] w-[26px] rounded-full bg-white shadow-sm transition-all"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Notifications Toggle -->
+<div class="flex items-center gap-4 p-4 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-blue-50 dark:bg-surface-highlight shrink-0 size-9">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal flex-1 truncate">Notifiche Push</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[30px] w-[50px] cursor-pointer items-center rounded-full border-none bg-gray-200 dark:bg-[#3d4855] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[26px] w-[26px] rounded-full bg-white shadow-sm transition-all"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Group 2: Supporto -->
+<div class="flex flex-col gap-2">
+<h3 class="text-[#637588] dark:text-[#9dabb9] text-xs font-bold uppercase tracking-wider px-2">Supporto</h3>
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Assistenza -->
+<button class="flex items-center gap-4 p-4 justify-between w-full hover:bg-gray-50 dark:hover:bg-[#232d38] transition-colors border-b border-gray-100 dark:border-gray-800 text-left">
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-blue-50 dark:bg-surface-highlight shrink-0 size-9">
+<span class="material-symbols-outlined">help</span>
+</div>
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal flex-1 truncate">Assistenza</p>
+</div>
+<span class="material-symbols-outlined text-[#9dabb9]">chevron_right</span>
+</button>
+<!-- Info App -->
+<button class="flex items-center gap-4 p-4 justify-between w-full hover:bg-gray-50 dark:hover:bg-[#232d38] transition-colors text-left">
+<div class="flex items-center gap-3">
+<div class="text-primary dark:text-white flex items-center justify-center rounded-lg bg-blue-50 dark:bg-surface-highlight shrink-0 size-9">
+<span class="material-symbols-outlined">info</span>
+</div>
+<p class="text-[#111418] dark:text-white text-base font-medium leading-normal flex-1 truncate">Info App</p>
+</div>
+<span class="material-symbols-outlined text-[#9dabb9]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Logout Section -->
+<div class="flex flex-col gap-4 mt-2">
+<button class="w-full bg-white dark:bg-surface-dark text-red-500 font-bold py-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                    Esci
+                </button>
+<div class="flex flex-col items-center gap-2">
+<p class="text-[#637588] dark:text-[#505a66] text-xs font-medium text-center">BOVE s.n.c. v1.0.2 (Build 240)</p>
+<div class="flex items-center justify-center gap-1 opacity-20">
+<!-- Simple SVG Logo Placeholder -->
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path class="text-white" d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="h-20"></div> <!-- Bottom spacer for navigation bar if exists -->
+</div>
+<!-- Bottom Navigation (Visual Only) -->
+<div class="fixed bottom-0 w-full max-w-md bg-white dark:bg-[#101922]/90 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 flex justify-around items-center h-16 pb-2 z-40">
+<div class="flex flex-col items-center justify-center w-full h-full text-[#9dabb9] hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium mt-1">Agenda</span>
+</div>
+<div class="flex flex-col items-center justify-center w-full h-full text-[#9dabb9] hover:text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+<span class="text-[10px] font-medium mt-1">Interventi</span>
+</div>
+<div class="flex flex-col items-center justify-center w-full h-full text-primary cursor-pointer">
+<span class="material-symbols-outlined text-[24px] fill-current">person</span>
+<span class="text-[10px] font-medium mt-1">Profilo</span>
+</div>
+</div>
+</div>
+</body></html>
